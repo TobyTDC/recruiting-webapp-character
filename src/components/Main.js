@@ -127,7 +127,7 @@ export default function MainSection() {
             skill: skillName,
             rolledResult: diceValue,
             dcValue: dcValue,
-            skillValue: skillPoints,
+            skillValue: totalPoints,
             finalResult: finalResult,
         };
 
