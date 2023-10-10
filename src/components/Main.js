@@ -8,7 +8,9 @@ import {
     MAXIMUM_ATTRIBUTE_VALUE,
     ATTRIBUTE_INDEX_MAP,
     SKILL_LIST,
+    URL,
 } from "../consts";
+import axios from "axios";
 
 export default function MainSection() {
 
@@ -18,6 +20,27 @@ export default function MainSection() {
     const [characterList, setCharacterList] = useState([]);
     const [skillCheckResultsItem, setSkillCheckResultsItem] = useState(EMPTY_SKILL_CHECK_RESULTS_ITEM);
 
+    /// Fetch Characters
+    async function fetchAllCharacters() {
+        axios.defaults.headers.common['Accept'] = 'application/json'; // Set headers to 'application/json'
+        try {
+            await axios.get(URL).then(function (response) {
+                let newCharacters = []
+                if (response.status == 200) {
+                    newCharacters = response.data.body["characterList"]
+                } else {
+                    alert(`No characters fetched: ${response.status}`)
+                }
+                setCharacterList(newCharacters)
+                console.log(response)
+            })
+        } catch {
+            alert('Error saving all characters')
+        }
+    }
+
+    useEffect(() => {fetchAllCharacters()}, [])
+    
     /// Top Actions
     function addNewCharacter() {
         let newCharacter = { // Lazy implmentation
@@ -32,6 +55,18 @@ export default function MainSection() {
         setCharacterList([])
     }
 
+    async function saveAllCharacters() {
+        axios.defaults.headers.common['Accept'] = 'application/json'; // Set headers to 'application/json'
+        try {
+            await axios.post(URL, {characterList}).then(function (response) {
+                alert('All characters saved')
+                console.log(response)
+            })
+        } catch {
+            alert('Error saving all characters')
+        }
+    }
+
     function handleActionButtonClick(actionType) {
         switch (actionType) { // TODO: Use const for keys
             case "add_new_character":
@@ -41,6 +76,7 @@ export default function MainSection() {
                 removeAllCharacters()
                 break;
             case "save_all":
+                saveAllCharacters()
                 break;
             default:
                 break;
@@ -57,13 +93,12 @@ export default function MainSection() {
         skillIndexMap[skill.name] = index
     })
 
-    function rollButtonClickHandler(characterId, skill, dcValue) {
+    function rollButtonClickHandler(characterId, skillName, dcValue) {
         // TODO: Make this reusable
         let character = characterList[characterId - 1]; // index == id - 1
-        let index = skillIndexMap[skill.name];
-        let attributeModifier = skill.attributeModifier;
+        let index = skillIndexMap[skillName];
+        let attributeModifier = SKILL_LIST[index].attributeModifier;
         
-
         let skillPoints = character.skillLevels[index];
         let attributeIndex = ATTRIBUTE_INDEX_MAP[attributeModifier];
 
@@ -89,7 +124,7 @@ export default function MainSection() {
 
         let newSkillCheckResultsItem = {
             characterId: characterId,
-            skill: skill.name,
+            skill: skillName,
             rolledResult: diceValue,
             dcValue: dcValue,
             skillValue: skillPoints,

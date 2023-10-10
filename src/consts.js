@@ -82,10 +82,12 @@ export const EMPTY_SKILL_CHECK_RESULTS_ITEM = {
     dcValue: null,
     skillValue: null,
     finalResult: null,
-}
+};
 
 export const EMPTY_CHARACTER = { // Lazy implmentation
     id: null,
     attributes: [10, 10, 10, 10, 10, 10], // TODO: Optimize this with dictionary
     skillLevels: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // TODO: Optimize this with dictionary
-}
+};
+
+export const URL = "https://recruiting.verylongdomaintotestwith.ca/api/{TobyTDC}/character"

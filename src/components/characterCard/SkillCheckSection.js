@@ -5,7 +5,7 @@ import { SKILL_LIST } from '../../consts';
 export default function SkillCheckSection({characterId, rollButtonClickHandler}) {
 
     /// states
-    const [selectedSkill, setSeletedSkill] = useState(SKILL_LIST[0]) // Default the selected skill to the first one
+    const [selectedSkill, setSeletedSkill] = useState(SKILL_LIST[0].name) // Default the selected skill to the first one
     const [dcValue, setDcValue] = useState(20)
 
     /// consts
