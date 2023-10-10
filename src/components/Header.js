@@ -1,6 +1,6 @@
 import React from "react";
 import '../App.css';
-import logo from '../bg3.webp';
+import logo from '../bg3.png';
 
 export default function Header() {
     return (
