@@ -3,6 +3,7 @@ import '../App.css';
 import TopActionButtonsSection from "./TopActionButtonsSection";
 import SkillCheckResultsSection from "./SkillCheckResultsSection";
 import CharacterCard from "./characterCard/CharacterCard";
+import GroupSkillCheckSection from "./GroupSkillCheckSection";
 import { 
     EMPTY_SKILL_CHECK_RESULTS_ITEM,
     MAXIMUM_ATTRIBUTE_VALUE,
@@ -222,6 +223,7 @@ export default function MainSection() {
         <section className="App-section">
             <TopActionButtonsSection handleActionButtonClick={handleActionButtonClick}/>
             <SkillCheckResultsSection skillCheckResultsItem={skillCheckResultsItem}/>
+            <GroupSkillCheckSection characterList={characterList} rollButtonClickHandler={rollButtonClickHandler}/>
             <section className="APP-characters_section">
                 {characterCards}
             </section>
