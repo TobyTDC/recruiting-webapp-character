@@ -1,3 +1,6 @@
+# Try this link without building the repo locally
+https://main.d1tfs9k3jjbbaq.amplifyapp.com
+
 # recruiting-webapp-character
 React coding test
 
