@@ -44,3 +44,124 @@
     transform: rotate(360deg);
   }
 }
+
+.App-top_action_buttons_section > button {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.App-top_action_buttons_section {
+  margin-bottom: -12px;
+}
+
+.App-skill_check_section > h1 {
+  font-size: 200%;
+  padding-top: 0px;
+}
+
+.App-character_card {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.App-character_card:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.6);
+}
+
+.App-character_card > h1 {
+  font-size: 200%;
+  padding-top: 24px;
+}
+
+.App-character_card-skill_check_section {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border-radius: 10px;
+  padding-top: px;
+}
+
+.App-character_card-skill_check_section > h1 {
+  font-size: 180%;
+  padding-top: 24px;
+}
+
+.App-skill_check_input {
+  display: inline-flex;
+  font-size: 100%;
+  width: 70%;
+}
+
+.App-character_skill_selector {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  margin-right: 20px;
+  font-size: 100%;
+}
+
+.App-skill_check_actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 120%;
+  padding-bottom: 12px;
+}
+
+.App-skill_check_actions > button {
+  font-size: 100%;
+}
+
+.APP-characters_section {
+  padding-bottom: 48px;
+}
+
+.App-character_values_panel {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+
+.App-attributes_section, .App-class_requirements_section, .App-skills_section {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.4);
+  /* margin-left: auto; */
+  margin-right: 12px;
+  margin-bottom: 12px;
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+.App-attributes_section > h1, .App-skills_section > h1 {
+  font-size: 160%;
+  flex-wrap: wrap;
+}
+
+.App-class_str {
+  cursor: pointer;
+  padding: 2px;
+}
+
+.App-class_requirements_section > h1 {
+  font-size: 160%;
+  text-align: center;
+  display: flex;
+}
+
+.App-skill_line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1px;
+}
