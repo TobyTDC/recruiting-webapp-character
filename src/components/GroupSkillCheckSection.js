@@ -77,7 +77,7 @@ export default function GroupSkillCheckSection({characterList, rollButtonClickHa
             <h1>Group Skill Check</h1>
             <h2>{
                 selectedCharacter.id === null 
-                ? `(Re)select an ability to begin`
+                ? `Select a skill to begin`
                 : `Character ${selectedCharacter.id} has the highest points in ${selectedSkill}: ${getTotalPoints(selectedCharacter, selectedSkill)
             }`}</h2>
             <div className="App-skill_check_actions">

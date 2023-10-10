@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import dice_logo from '../dice.png';
 
 export default function SkillCheckResultsSection({skillCheckResultsItem}) {
 
@@ -16,6 +17,7 @@ export default function SkillCheckResultsSection({skillCheckResultsItem}) {
 
     return (
         <section className="App-skill_check_section">
+            <img src={dice_logo}/>
             <h1>Skill Check Results</h1>
             {skillSectionPanel}
         </section>

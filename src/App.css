@@ -18,12 +18,22 @@
 
 .App-header {
   background-color: #282c34;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header > img {
+  width: 100px;
+  padding-left: 12px;
+}
+
+.App-skill_check_section > img {
+  margin-top: -42px;
+  width: 200px;
 }
 
 .App-section {
@@ -59,6 +69,11 @@
 .App-skill_check_section > h1 {
   font-size: 200%;
   padding-top: 0px;
+  margin-top: -48px;
+}
+
+.skill_check_section {
+  display: flex;
 }
 
 .App-character_card {
